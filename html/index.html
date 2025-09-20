@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" style="--computed-header-height: 121px;">
+
+<head>
+  <link rel="stylesheet" href="../style/main.css">
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cкладонлайн — оптовий склад ділової кожгалантереї</title>
+  <script src="../js/banner-slider.js"></script>
+  <script src="../js/catalog-dropdown.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+      <ol tabindex="-1"
+        class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
+      </ol>
+    </div>
+    <div class="min-h-screen flex flex-col">
+      <header class="fixed top-0 left-0 right-0 bg-white border-b shadow-sm z-50"
+        style="--header-height: var(--computed-header-height);">
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between"><a class="flex items-center" href="#"><img
+                src="../img/logo.webp"
+                alt="SKLADONLINE" class="h-5 object-contain"></a>
+            <div class="hidden md:flex flex-1 max-w-lg mx-8">
+              <form action="/search" class="relative w-full"><input type="text"
+                  class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full pr-10"
+                  name="q" placeholder="Пошук товарів..."><button
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md absolute right-1 top-1 h-8 w-8 p-0"
+                  type="submit"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><img
+                      src="../img/icons/icon-search.svg" alt="Search"></span></button></form>
+            </div>
+            <div class="flex items-center space-x-4"><a href="./comparison.html"><button
+                  class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden lg:flex items-center space-x-1"
+                  id="compare-icon"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><img
+                      src="../img/icons/icon-compare.svg" alt="Compare"></span><span class="text-sm">Порівняння</span></button></a><a href="./favorites.html"><button
+                  class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden lg:flex items-center space-x-1"
+                  id="favorites-icon"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><img
+                      src="../img/icons/icon-heart.svg" alt="Favorites"></span><span class="text-sm">Улюблені</span></button></a><a href="./viewed.html"><button
+                  class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden lg:flex items-center space-x-1"><span
+                    class="inline-block align-middle w-4 h-4" aria-hidden="true"><img src="../img/icons/icon-viewed.svg"
+                      alt="Viewed"></span><span class="text-sm">Переглянуті</span></button></a><a href="./login.html"><button
+                  class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 flex items-center space-x-1"><span
+                    class="inline-block align-middle w-4 h-4" aria-hidden="true"><img src="../img/icons/icon-user.svg"
+                      alt="User"></span><span class="text-sm hidden lg:block">Кабінет</span></button></a><a href="./cart.html"><button
+                  class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 flex items-center space-x-1 relative"
+                  id="cart-icon"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><img
+                      src="../img/icons/icon-cart.svg" alt="Cart"></span><span class="text-sm hidden lg:block">Кошик</span></button></a></div>
+          </div>
+          <div class="md:hidden mt-4">
+            <form action="/search" class="relative"><input type="text"
+                class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full pr-10"
+                name="q" placeholder="Пошук товарів..."><button
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md absolute right-1 top-1 h-8 w-8 p-0"
+                type="submit"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><img
+                    src="../img/icons/icon-search.svg" alt="Search"></span></button></form>
+          </div>
+        </div> 
+        <nav class="bg-primary text-primary-foreground">
+          <div class="container mx-auto px-4">
+            <div class="relative flex items-center justify-between">
+              <button class="flex items-center space-x-2 py-3 hover:bg-primary/90 px-4 rounded" id="catalog-btn">
+                <span class="inline-block align-middle w-4 h-4" aria-hidden="true"><img src="../img/icons/icon-menu.svg" alt="Menu"></span>
+                <span>Каталог товарів</span>
+                <img src="../img/icons/icon-chevron-down.svg" alt="Chevron Down" width="24" height="24" class="lucide lucide-chevron-down w-4 h-4">
+              </button>
+              <div id="catalog-dropdown" class="absolute left-0 top-full mt-2 w-64 bg-white shadow-lg rounded z-50 p-4 hidden text-black">
+                <ul class="space-y-2" style="color:#000000;">
+                  <li><a href="./catalog.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Всі товари</a></li>
+                  <li><a href="./catalog/akcii.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Промоакції</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Чоловічі сумки</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Жіночі сумки</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Сумки</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Рюкзаки</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Гаманці</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Портмоне</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Портфелі</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Папки</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Дорожні сумки</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Валізи</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Барсетки</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Ремені</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Косметички</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Обкладинки для документів</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Візитниці</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Ключниці</a></li>
+                  <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 rounded">Аксесуари</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="flex-1 pt-[120px] md:pt-[120px]">
+        <div class="min-h-screen bg-white">
+          <div class="relative h-[645px] md:h-[720px] overflow-hidden">
+            <div class="relative h-full bg-gradient-to-r from-blue-900 to-blue-700 transition-all duration-1000">
+              <div class="absolute inset-0">
+                <picture>
+                  <source media="(min-width: 768px)"
+                    srcset="https://skladonline.com.ua/wa-data/public/shop/products/10/webp/data/public/photos/25/00/25/25.1400x0.webp">
+                  <img
+                    src="https://skladonline.com.ua/wa-data/public/shop/products/10/webp/data/public/photos/25/00/25/25.1400x0.webp"
+                    alt="Чоловічі сумки" class="w-full h-full object-cover" sizes="(min-width: 768px) 1440px, 430px">
+                </picture>
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div><button
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors z-10"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chevron-left w-6 h-6">
+                  <path d="m15 18-6-6 6-6"></path>
+                </svg></button><button
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors z-10"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chevron-right w-6 h-6">
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg></button>
+            </div>
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10"><button
+                class="w-3 h-3 rounded-full transition-colors bg-white"></button><button
+                class="w-3 h-3 rounded-full transition-colors bg-white/50"></button><button
+                class="w-3 h-3 rounded-full transition-colors bg-white/50"></button></div>
+          </div>
+          <section class="py-8 bg-gray-50">
+            <div class="container mx-auto px-4">
+              <div class="text-center">
+                <h2 class="text-xl font-semibold text-gray-900 mb-2">Оптовий склад ділової шкіряної галантереї</h2>
+                <p class="text-gray-600">Офіційний дистриб'ютор торгових марок: <span class="font-medium">Luxon, Tiger
+                    NU, David Jones, Himawari, Safenta, Vermari, Alfa Ricco, Cantlor, Bradford, Hassion</span> в Україні
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="py-16">
+            <div class="container mx-auto px-4">
+              <div class="flex items-center justify-between mb-8">
+                <div>
+                  <h2 class="text-3xl font-bold mb-2">Промоакції</h2>
+                  <p class="text-gray-600">Спеціальні пропозиції та знижки на популярні товари</p>
+                </div><a href="./catalog/akcii.html"><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">Всі
+                    акції<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-arrow-right w-4 h-4 ml-2">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg></button></a>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-6">
+                <div class="group relative h-full flex flex-col px-4">
+                  <div class="relative aspect-square mb-3 overflow-hidden"><a href="#"><img
+                        src="../img/product.webp"
+                        alt="Чоловіча сумка LUXON Business Elite"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"></a>
+                    <div
+                      class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button class="w-2 h-2 rounded-full transition-colors bg-white"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button>
+                    </div>
+                    <div class="absolute top-3 left-3 flex flex-col gap-1 z-10"><span
+                        class="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">ХІТ</span><span
+                        class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-medium">-18%</span></div>
+                    <div
+                      class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><svg
+                            width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                              d="M20.8 7.2a4.5 4.5 0 0 0-6.36 0L12 9.64l-2.44-2.44a4.5 4.5 0 1 0-6.36 6.36L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.36z">
+                            </path>
+                          </svg>
+                        </span></button><button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="text-sm">⚖️</span></button>
+                    </div>
+                  </div>
+                  <div class="space-y-2 flex-1 flex flex-col">
+                    <div class="text-xs text-gray-500 font-medium tracking-wide uppercase">LUXON</div><a class="block"
+                      href="#">
+                      <h3 class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium">
+                        Чоловіча сумка LUXON Business Elite</h3>
+                    </a>
+                    <div class="pt-1 mt-auto"><a class="inline-block" href="./login.html"><span
+                          class="text-sm text-primary hover:text-primary/80 transition-colors font-medium">Увійти для
+                          перегляду цін →</span></a></div>
+                  </div>
+                </div>
+                <div class="group relative h-full flex flex-col px-4">
+                  <div class="relative aspect-square mb-3 overflow-hidden"><a href="#"><img
+                        src="../img/product.webp"
+                        alt="Жіноча сумка DAVID JONES Elegance"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"></a>
+                    <div
+                      class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button class="w-2 h-2 rounded-full transition-colors bg-white"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button>
+                    </div>
+                    <div class="absolute top-3 left-3 flex flex-col gap-1 z-10"><span
+                        class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-medium">-20%</span></div>
+                    <div
+                      class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><svg
+                            width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                              d="M20.8 7.2a4.5 4.5 0 0 0-6.36 0L12 9.64l-2.44-2.44a4.5 4.5 0 1 0-6.36 6.36L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.36z">
+                            </path>
+                          </svg>
+                        </span></button><button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="text-sm">⚖️</span></button>
+                    </div>
+                  </div>
+                  <div class="space-y-2 flex-1 flex flex-col">
+                    <div class="text-xs text-gray-500 font-medium tracking-wide uppercase">DAVID JONES</div><a
+                      class="block" href="#">
+                      <h3 class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium">
+                        Жіноча сумка DAVID JONES Elegance</h3>
+                    </a>
+                    <div class="pt-1 mt-auto"><a class="inline-block" href="./login.html"><span
+                          class="text-sm text-primary hover:text-primary/80 transition-colors font-medium">Увійти для
+                          перегляду цін →</span></a></div>
+                  </div>
+                </div>
+                <div class="group relative h-full flex flex-col px-4">
+                  <div class="relative aspect-square mb-3 overflow-hidden"><a href="./product/promo3.html"><img
+                        src="../img/product.webp"
+                        alt="Портфель TIGER NU Executive"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"></a>
+                    <div
+                      class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button class="w-2 h-2 rounded-full transition-colors bg-white"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button>
+                    </div>
+                    <div class="absolute top-3 left-3 flex flex-col gap-1 z-10"><span
+                        class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-medium">-20%</span></div>
+                    <div
+                      class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><svg
+                            width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                              d="M20.8 7.2a4.5 4.5 0 0 0-6.36 0L12 9.64l-2.44-2.44a4.5 4.5 0 1 0-6.36 6.36L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.36z">
+                            </path>
+                          </svg>
+                        </span></button><button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="text-sm">⚖️</span></button>
+                    </div>
+                  </div>
+                  <div class="space-y-2 flex-1 flex flex-col">
+                    <div class="text-xs text-gray-500 font-medium tracking-wide uppercase">TIGER NU</div><a
+                      class="block" href="./product/promo3.html">
+                      <h3 class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium">
+                        Портфель TIGER NU Executive</h3>
+                    </a>
+                    <div class="pt-1 mt-auto"><a class="inline-block" href="./login.html"><span
+                          class="text-sm text-primary hover:text-primary/80 transition-colors font-medium">Увійти для
+                          перегляду цін →</span></a></div>
+                  </div>
+                </div>
+                <div class="group relative h-full flex flex-col px-4">
+                  <div class="relative aspect-square mb-3 overflow-hidden"><a href="./product/promo4.html"><img
+                        src="../img/product.webp"
+                        alt="Рюкзак NOBO Urban Style"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"></a>
+                    <div
+                      class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button class="w-2 h-2 rounded-full transition-colors bg-white"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button>
+                    </div>
+                    <div class="absolute top-3 left-3 flex flex-col gap-1 z-10"><span
+                        class="bg-green-500 text-white text-xs px-2 py-1 rounded font-medium">НОВИНКА</span><span
+                        class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-medium">-19%</span></div>
+                    <div
+                      class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><svg
+                            width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                              d="M20.8 7.2a4.5 4.5 0 0 0-6.36 0L12 9.64l-2.44-2.44a4.5 4.5 0 1 0-6.36 6.36L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.36z">
+                            </path>
+                          </svg>
+                        </span></button><button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="text-sm">⚖️</span></button>
+                    </div>
+                  </div>
+                  <div class="space-y-2 flex-1 flex flex-col">
+                    <div class="text-xs text-gray-500 font-medium tracking-wide uppercase">NOBO</div><a class="block"
+                      href="./product/promo4.html">
+                      <h3 class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium">
+                        Рюкзак NOBO Urban Style</h3>
+                    </a>
+                    <div class="pt-1 mt-auto"><a class="inline-block" href="./login.html"><span
+                          class="text-sm text-primary hover:text-primary/80 transition-colors font-medium">Увійти для
+                          перегляду цін →</span></a></div>
+                  </div>
+                </div>
+                <div class="group relative h-full flex flex-col px-4">
+                  <div class="relative aspect-square mb-3 overflow-hidden"><a href="./product/promo5.html"><img
+                        src="../img/product.webp"
+                        alt="Гаманець FABIANO Premium"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"></a>
+                    <div
+                      class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button class="w-2 h-2 rounded-full transition-colors bg-white"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button>
+                    </div>
+                    <div class="absolute top-3 left-3 flex flex-col gap-1 z-10"><span
+                        class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-medium">-25%</span></div>
+                    <div
+                      class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><svg
+                            width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                              d="M20.8 7.2a4.5 4.5 0 0 0-6.36 0L12 9.64l-2.44-2.44a4.5 4.5 0 1 0-6.36 6.36L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.36z">
+                            </path>
+                          </svg>
+                        </span></button><button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="text-sm">⚖️</span></button>
+                    </div>
+                  </div>
+                  <div class="space-y-2 flex-1 flex flex-col">
+                    <div class="text-xs text-gray-500 font-medium tracking-wide uppercase">FABIANO</div><a class="block"
+                      href="./product/promo5.html">
+                      <h3 class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium">
+                        Гаманець FABIANO Premium</h3>
+                    </a>
+                    <div class="pt-1 mt-auto"><a class="inline-block" href="./login.html"><span
+                          class="text-sm text-primary hover:text-primary/80 transition-colors font-medium">Увійти для
+                          перегляду цін →</span></a></div>
+                  </div>
+                </div>
+                <div class="group relative h-full flex flex-col px-4">
+                  <div class="relative aspect-square mb-3 overflow-hidden"><a href="./product/promo6.html"><img
+                        src="../img/product.webp"
+                        alt="Косметичка LUXON Travel Glam"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"></a>
+                    <div
+                      class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button class="w-2 h-2 rounded-full transition-colors bg-white"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button><button
+                        class="w-2 h-2 rounded-full transition-colors bg-white/50 hover:bg-white/75"></button>
+                    </div>
+                    <div class="absolute top-3 left-3 flex flex-col gap-1 z-10"><span
+                        class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-medium">-26%</span></div>
+                    <div
+                      class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="inline-block align-middle w-4 h-4" aria-hidden="true"><svg
+                            width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                              d="M20.8 7.2a4.5 4.5 0 0 0-6.36 0L12 9.64l-2.44-2.44a4.5 4.5 0 1 0-6.36 6.36L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.36z">
+                            </path>
+                          </svg>
+                        </span></button><button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                        aria-pressed="false"><span class="text-sm">⚖️</span></button>
+                    </div>
+                  </div>
+                  <div class="space-y-2 flex-1 flex flex-col">
+                    <div class="text-xs text-gray-500 font-medium tracking-wide uppercase">LUXON</div><a class="block"
+                      href="./product/promo6.html">
+                      <h3 class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium">
+                        Косметичка LUXON Travel Glam</h3>
+                    </a>
+                    <div class="pt-1 mt-auto"><a class="inline-block" href="./login.html"><span
+                          class="text-sm text-primary hover:text-primary/80 transition-colors font-medium">Увійти для
+                          перегляду цін →</span></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-16 bg-primary text-primary-foreground">
+            <div class="container mx-auto px-4">
+              <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Для перегляду цін та оформлення замовлень необхідна реєстрація</h2>
+                <p class="text-xl mb-8 opacity-90">Зареєструйтесь як оптовий клієнт та отримайте доступ до спеціальних
+                  цін та умов</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="./login.html"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8">Реєстрація
+                      / Вхід</button></a><a href="tel:+380973072887"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-phone w-5 h-5 mr-2">
+                        <path
+                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                      </svg>Зателефонувати</button></a></div>
+              </div>
+            </div>
+          </section>
+          <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl font-bold text-center mb-12">Переваги співпраці з нами</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-users w-8 h-8 text-primary">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg></div>
+                  <h3 class="text-xl font-semibold mb-3">Лояльні умови</h3>
+                  <p class="text-gray-600">Індивідуальний підхід до кожного оптового клієнта з гнучкими умовами
+                    співпраці</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-award w-8 h-8 text-primary">
+                      <path
+                        d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                      </path>
+                      <circle cx="12" cy="8" r="6"></circle>
+                    </svg></div>
+                  <h3 class="text-xl font-semibold mb-3">Оптимальні ціни</h3>
+                  <p class="text-gray-600">Конкурентні оптові ціни безпосередньо від офіційного дистриб'ютора</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-shield w-8 h-8 text-primary">
+                      <path
+                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                      </path>
+                    </svg></div>
+                  <h3 class="text-xl font-semibold mb-3">Якісне обслуговування</h3>
+                  <p class="text-gray-600">Професійна підтримка та консультації на всіх етапах співпраці</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-star w-8 h-8 text-primary">
+                      <path
+                        d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                      </path>
+                    </svg></div>
+                  <h3 class="text-xl font-semibold mb-3">Швидка доставка</h3>
+                  <p class="text-gray-600">Оперативна доставка замовлень по всій території України</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+              <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-8">Про SKLADONLINE</h2>
+                <div class="text-lg text-gray-600 space-y-4 leading-relaxed">
+                  <p><strong>SKLADONLINE</strong> - провідна оптова торгова площадка шкіряних виробів в Україні. Ми
+                    спеціалізуємося на якісних товарах з натуральної та екошкіри від провідних світових виробників.</p>
+                  <p>Як офіційний дистриб'ютор торгових марок <strong>Luxon, Tiger NU, David Jones, Nobo</strong>
+                    та<strong> Fabiano</strong>, ми гарантуємо автентичність та високу якість кожного виробу в нашому
+                    асортименті.</p>
+                  <p>Наша мета - забезпечити партнерів найкращими товарами за оптимальними цінами з неперевершеним
+                    рівнем обслуговування та швидкою доставкою по всій Україні.</p>
+                </div>
+                <div class="mt-8"><a href="./about.html"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8">Детальніше
+                      про компанію<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 ml-2">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg></button></a></div>
+              </div>
+            </div>
+          </section>
+          <section class="py-16 bg-gray-900 text-white">
+            <div class="container mx-auto px-4">
+              <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-8">Готові до співпраці?</h2>
+                <p class="text-xl text-gray-300 mb-8">Зв'яжіться з нами для отримання консультації та обговорення умов
+                  партнерства</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                  <div class="flex items-center justify-center space-x-3"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-6 h-6 text-primary">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                      </path>
+                    </svg>
+                    <div>
+                      <p class="font-semibold">(097) 307-28-87</p>
+                      <p class="font-semibold">(066) 055-99-61</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-center space-x-3"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-6 h-6 text-primary">
+                      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                    <div>
+                      <p class="font-semibold">i@skladonline.com.ua</p>
+                      <p class="text-sm text-gray-400">Пн-Пт: 09:00-18:00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="./contacts.html"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8">Контактна
+                      інформація</button></a><a href="./login.html"><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8">Зареєструватися</button></a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="bg-gray-900 text-gray-300">
+        <div class="container mx-auto px-4 py-12">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-xl font-bold text-white mb-4">SKLADONLINE</h3>
+              <p class="text-sm">Інтернет-магазин шкіряних виробів. Великий вибір сумок, кошельків, ремінів та
+                аксесуарів.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-4">Контакти</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-phone w-4 h-4">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg><span>+380 (44) 123-45-67</span></div>
+                <div class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-phone w-4 h-4">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg><span>+380 (67) 123-45-67</span></div>
+                <div class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-mail w-4 h-4">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg><span>info@skladonline.com.ua</span></div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-4">Час роботи</h4>
+              <div class="space-y-3 text-sm">
+                <div class="flex items-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-clock w-4 h-4">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg><span>Пн-Пт: 9:00-18:00</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-gray-700 mt-8 pt-8">
+            <div class="text-sm text-center">© 2025 SKLADONLINE. Всі права захищені.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

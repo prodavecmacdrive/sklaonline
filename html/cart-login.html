@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en" style="--computed-header-height: 121px">
+  <head>
+    <link rel="stylesheet" href="../style/main.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cкладонлайн — оптовий склад ділової кожгалантереї</title>
+    <script src="../js/app.js"></script>
+    <script src="../js/catalog-dropdown.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <div
+        role="region"
+        aria-label="Notifications (F8)"
+        tabindex="-1"
+        style="pointer-events: none"
+      >
+        <ol
+          tabindex="-1"
+          class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"
+        ></ol>
+      </div>
+      <div class="min-h-screen flex flex-col">
+        <header
+          class="fixed top-0 left-0 right-0 bg-white border-b shadow-sm z-50"
+          style="--header-height: var(--computed-header-height)"
+        >
+          <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+              <a class="flex items-center" href="./index.html"
+                ><img
+                  src="../img/logo.webp"
+                  alt="SKLADONLINE"
+                  class="h-5 object-contain"
+              /></a>
+              <div class="hidden md:flex flex-1 max-w-lg mx-8">
+                <form action="/search" class="relative w-full">
+                  <input
+                    type="text"
+                    class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full pr-10"
+                    name="q"
+                    placeholder="Пошук товарів..."
+                  /><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md absolute right-1 top-1 h-8 w-8 p-0"
+                    type="submit"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img src="../img/icons/icon-search.svg" alt="Search"
+                    /></span>
+                  </button>
+                </form>
+              </div>
+              <div class="flex items-center space-x-4">
+                <a href="./comparison.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden lg:flex items-center space-x-1"
+                    id="compare-icon"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img
+                        src="../img/icons/icon-compare.svg"
+                        alt="Compare" /></span
+                    ><span class="text-sm">Порівняння</span>
+                  </button></a
+                ><a href="./favorites.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden lg:flex items-center space-x-1"
+                    id="favorites-icon"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img
+                        src="../img/icons/icon-heart.svg"
+                        alt="Favorites" /></span
+                    ><span class="text-sm">Улюблені</span>
+                  </button></a
+                ><a href="./viewed.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden lg:flex items-center space-x-1"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img
+                        src="../img/icons/icon-viewed.svg"
+                        alt="Viewed" /></span
+                    ><span class="text-sm">Переглянуті</span>
+                  </button></a
+                ><a href="./login.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 flex items-center space-x-1"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img src="../img/icons/icon-user.svg" alt="User" /></span
+                    ><span class="text-sm hidden lg:block">Кабінет</span>
+                  </button></a
+                ><a href="./cart.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 flex items-center space-x-1 relative"
+                    id="cart-icon"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img src="../img/icons/icon-cart.svg" alt="Cart" /></span
+                    ><span class="text-sm hidden lg:block">Кошик</span>
+                  </button></a
+                >
+              </div>
+            </div>
+            <div class="md:hidden mt-4">
+              <form action="/search" class="relative">
+                <input
+                  type="text"
+                  class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full pr-10"
+                  name="q"
+                  placeholder="Пошук товарів..."
+                /><button
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md absolute right-1 top-1 h-8 w-8 p-0"
+                  type="submit"
+                >
+                  <span
+                    class="inline-block align-middle w-4 h-4"
+                    aria-hidden="true"
+                    ><img src="../img/icons/icon-search.svg" alt="Search"
+                  /></span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <nav class="bg-primary text-primary-foreground">
+            <div class="container mx-auto px-4">
+              <div class="relative flex items-center justify-between">
+                <button
+                  class="flex items-center space-x-2 py-3 hover:bg-primary/90 px-4 rounded"
+                  id="catalog-btn"
+                >
+                  <span
+                    class="inline-block align-middle w-4 h-4"
+                    aria-hidden="true"
+                    ><img src="../img/icons/icon-menu.svg" alt="Menu"
+                  /></span>
+                  <span>Каталог товарів</span>
+                  <img
+                    src="../img/icons/icon-chevron-down.svg"
+                    alt="Chevron Down"
+                    width="24"
+                    height="24"
+                    class="lucide lucide-chevron-down w-4 h-4"
+                  />
+                </button>
+                <div
+                  id="catalog-dropdown"
+                  class="absolute left-0 top-full mt-2 w-64 bg-white shadow-lg rounded z-50 p-4 hidden text-black"
+                >
+                  <ul class="space-y-2" style="color: #000000">
+                    <li>
+                      <a
+                        href="./catalog.html"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Всі товари</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="./catalog/akcii.html"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Промоакції</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Чоловічі сумки</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Жіночі сумки</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Сумки</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Рюкзаки</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Гаманці</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Портмоне</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Портфелі</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Папки</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Дорожні сумки</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Валізи</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Барсетки</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Ремені</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Косметички</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Обкладинки для документів</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Візитниці</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Ключниці</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-100 rounded"
+                        >Аксесуари</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <main class="flex-1 pt-[120px] md:pt-[120px]">
+          <div class="min-h-screen bg-gray-50 py-8">
+            <div class="container mx-auto px-4">
+              <div class="max-w-2xl mx-auto text-center">
+                <h1 class="text-3xl font-bold mb-4">Кошик</h1>
+                <div class="bg-white rounded-lg p-8">
+                  <img
+                    src="../img/icons/icon-shopping-bag.svg"
+                    alt="Shopping Bag"
+                    width="24"
+                    height="24"
+                    class="lucide lucide-shopping-bag w-16 h-16 text-muted-foreground mx-auto mb-4"
+                  />
+                  <h2 class="text-xl font-semibold mb-2">
+                    Увійдіть в особистий кабінет
+                  </h2>
+                  <p class="text-muted-foreground mb-6">
+                    Для використання кошика необхідно увійти в особистий кабінет
+                  </p>
+                  <a href="./login.html"
+                    ><button
+                      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                    >
+                      Увійти в кабінет
+                    </button></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="bg-gray-900 text-gray-300">
+          <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-4">SKLADONLINE</h3>
+                <p class="text-sm">
+                  Інтернет-магазин шкіряних виробів. Великий вибір сумок,
+                  кошельків, ремінів та аксесуарів.
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white mb-4">Контакти</h4>
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-center space-x-2">
+                    <img
+                      src="../img/icons/icon-phone.svg"
+                      alt="Phone"
+                      width="24"
+                      height="24"
+                      class="lucide lucide-phone w-4 h-4"
+                    /><span>+380 (44) 123-45-67</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <img
+                      src="../img/icons/icon-phone.svg"
+                      alt="Phone"
+                      width="24"
+                      height="24"
+                      class="lucide lucide-phone w-4 h-4"
+                    /><span>+380 (67) 123-45-67</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <img
+                      src="../img/icons/icon-mail.svg"
+                      alt="Mail"
+                      width="24"
+                      height="24"
+                      class="lucide lucide-mail w-4 h-4"
+                    /><span>info@skladonline.com.ua</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white mb-4">Час роботи</h4>
+                <div class="space-y-3 text-sm">
+                  <div class="flex items-center space-x-2">
+                    <img
+                      src="../img/icons/icon-clock.svg"
+                      alt="Clock"
+                      width="24"
+                      height="24"
+                      class="lucide lucide-clock w-4 h-4"
+                    /><span>Пн-Пт: 9:00-18:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8">
+              <div class="text-sm text-center">
+                © 2025 SKLADONLINE. Всі права захищені.
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

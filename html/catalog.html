@@ -1,0 +1,1472 @@
+<!doctype html>
+<html lang="en" style="--computed-header-height: 121px">
+  <head>
+    <link rel="stylesheet" href="../style/main.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cкладонлайн — оптовий склад ділової кожгалантереї</title>
+    <script src="../js/app.js"></script>
+    <script src="../js/mobile-filters.js"></script>
+    <script src="../js/filters.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <div
+        role="region"
+        aria-label="Notifications (F8)"
+        tabindex="-1"
+        style="pointer-events: none"
+      >
+        <ol
+          tabindex="-1"
+          class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"
+        ></ol>
+      </div>
+      <div class="min-h-screen flex flex-col">
+        <header
+          class="fixed top-0 left-0 right-0 bg-white border-b shadow-sm z-50"
+          style="--header-height: var(--computed-header-height)"
+        >
+          <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+              <a class="flex items-center" href="./index.html"
+                ><img
+                  src="../img/logo.webp"
+                  alt="SKLADONLINE"
+                  class="h-5 object-contain"
+              /></a>
+              <div class="hidden md:flex flex-1 max-w-lg mx-8">
+                <form action="/search" class="relative w-full">
+                  <input
+                    type="text"
+                    class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full pr-10"
+                    name="q"
+                    placeholder="Пошук товарів..."
+                  /><button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md absolute right-1 top-1 h-8 w-8 p-0"
+                    type="submit"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img src="../img/icons/icon-search.svg" alt="Search"
+                    /></span>
+                  </button>
+                </form>
+              </div>
+              <div class="flex items-center space-x-4">
+                <a href="./comparison.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden lg:flex items-center space-x-1"
+                    id="compare-icon"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img
+                        src="../img/icons/icon-compare.svg"
+                        alt="Compare" /></span
+                    ><span class="text-sm">Порівняння</span>
+                  </button></a
+                ><a href="./favorites.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden lg:flex items-center space-x-1"
+                    id="favorites-icon"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img
+                        src="../img/icons/icon-heart.svg"
+                        alt="Favorites" /></span
+                    ><span class="text-sm">Улюблені</span>
+                  </button></a
+                ><a href="./viewed.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden lg:flex items-center space-x-1"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img
+                        src="../img/icons/icon-viewed.svg"
+                        alt="Viewed" /></span
+                    ><span class="text-sm">Переглянуті</span>
+                  </button></a
+                ><a href="./login.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 flex items-center space-x-1"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img src="../img/icons/icon-user.svg" alt="User" /></span
+                    ><span class="text-sm hidden lg:block">Кабінет</span>
+                  </button></a
+                ><a href="./cart.html"
+                  ><button
+                    class="justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 flex items-center space-x-1 relative"
+                    id="cart-icon"
+                  >
+                    <span
+                      class="inline-block align-middle w-4 h-4"
+                      aria-hidden="true"
+                      ><img src="../img/icons/icon-cart.svg" alt="Cart" /></span
+                    ><span class="text-sm hidden lg:block">Кошик</span>
+                  </button></a
+                >
+              </div>
+            </div>
+            <div class="md:hidden mt-4">
+              <form action="/search" class="relative">
+                <input
+                  type="text"
+                  class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full pr-10"
+                  name="q"
+                  placeholder="Пошук товарів..."
+                /><button
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md absolute right-1 top-1 h-8 w-8 p-0"
+                  type="submit"
+                >
+                  <span
+                    class="inline-block align-middle w-4 h-4"
+                    aria-hidden="true"
+                    ><img src="../img/icons/icon-search.svg" alt="Search"
+                  /></span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <nav class="bg-primary text-primary-foreground">
+            <div class="container mx-auto px-4">
+              <div class="relative flex items-center justify-between">
+                <div class="py-3 px-0">
+                  <span class="text-primary-foreground font-medium"
+                    >Всі товари</span
+                  >
+                </div>
+                <button
+                  class="fliters_btn_mob inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 md:hidden text-primary-foreground hover:bg-primary/90 py-3"
+                >
+                  <img
+                    style="height: 34px; padding: 3px"
+                    src="../img/icons/icon-filter.svg"
+                    alt="Filter"
+                  />
+                </button>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+        <main class="flex-1 pt-[120px] md:pt-[120px]">
+          <div class="min-h-screen bg-white">
+            <div class="container mx-auto px-4 py-6">
+              <div class="flex items-center justify-between mb-8">
+                <div>
+                  <p class="text-sm text-gray-500">4 + товарів</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                  <button
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 md:hidden border-gray-200"
+                  >
+                    <img
+                      src="../img/icons/icon-filter.svg"
+                      alt="Filter"
+                      class="lucide lucide-filter w-4 h-4 mr-2"
+                    />
+                    Фільтри
+                  </button>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="hidden md:block w-80 flex-shrink-0">
+                  <div class="border-r border-gray-100 pr-6 pb-6 sticky top-6">
+                    <div class="mb-8">
+                      <h2 class="text-lg font-medium text-gray-900 mb-4">
+                        Категорії
+                      </h2>
+                      <nav class="space-y-1">
+                        <a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md bg-primary text-primary-foreground font-medium"
+                          href="./catalog.html"
+                          >Всі товари</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/akcii.html"
+                          >Промоакції</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/sumky.html"
+                          >Сумки</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/sumky-cholovichi.html"
+                          >Чоловічі сумки</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/sumky-zhinochi.html"
+                          >Жіночі сумки</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/ryukzaky.html"
+                          >Рюкзаки</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/koshelky.html"
+                          >Гаманці</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/portmone.html"
+                          >Портмоне</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/portfeli.html"
+                          >Портфелі</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/papky.html"
+                          >Папки</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/dorozhni-sumky.html"
+                          >Дорожні сумки</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/chemodany.html"
+                          >Валізи</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/barsetky.html"
+                          >Барсетки</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/remeni.html"
+                          >Ремені</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/kosmetychky.html"
+                          >Косметички</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/obkladynky-dokumentiv.html"
+                          >Обкладинки для документів</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/vizytnyci.html"
+                          >Візитниці</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/klyuchnyci.html"
+                          >Ключниці</a
+                        ><a
+                          class="block px-3 py-2 text-sm transition-colors rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                          href="./catalog/aksesuary.html"
+                          >Аксесуари</a
+                        >
+                      </nav>
+                    </div>
+
+                    <h2 class="text-lg font-semibold mb-4">Фільтри</h2>
+                    <div class="w-full">
+                      <div class="space-y-6">
+                        <div>
+                          <label class="text-sm font-medium mb-2 block"
+                            >Сортування</label
+                          >
+                          <div class="relative">
+                            <button
+                              type="button"
+                              id="sortDropdownBtn"
+                              aria-haspopup="listbox"
+                              aria-expanded="false"
+                              class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            >
+                              <span id="sortSelected">За популярністю</span>
+                              <img
+                                src="../img/icons/icon-chevron-down-b.svg"
+                                alt="Chevron Down"
+                                width="24"
+                                height="24"
+                                class="lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                aria-hidden="true"
+                              />
+                            </button>
+                            <ul
+                              id="sortDropdownList"
+                              class="absolute left-0 right-0 mt-1 bg-white border rounded shadow-lg z-10 hidden"
+                              role="listbox"
+                            >
+                              <li
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                role="option"
+                                data-value="popular"
+                              >
+                                За популярністю
+                              </li>
+                              <li
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                role="option"
+                                data-value="price-asc"
+                              >
+                                Ціна: по возрастанию
+                              </li>
+                              <li
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                role="option"
+                                data-value="price-desc"
+                              >
+                                Ціна: по убыванию
+                              </li>
+                              <li
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                role="option"
+                                data-value="new"
+                              >
+                                Новинки
+                              </li>
+                            </ul>
+                          </div>
+                          <script>
+                            const sortBtn =
+                              document.getElementById("sortDropdownBtn");
+                            const sortList =
+                              document.getElementById("sortDropdownList");
+                            const sortSelected =
+                              document.getElementById("sortSelected");
+                            sortBtn.addEventListener("click", function (e) {
+                              e.stopPropagation();
+                              sortList.classList.toggle("hidden");
+                              sortBtn.setAttribute(
+                                "aria-expanded",
+                                !sortList.classList.contains("hidden"),
+                              );
+                            });
+                            sortList
+                              .querySelectorAll("li")
+                              .forEach(function (item) {
+                                item.addEventListener("click", function () {
+                                  sortSelected.textContent = item.textContent;
+                                  sortList.classList.add("hidden");
+                                  sortBtn.setAttribute("aria-expanded", false);
+                                });
+                              });
+                            document.addEventListener("click", function (e) {
+                              if (!sortBtn.contains(e.target)) {
+                                sortList.classList.add("hidden");
+                                sortBtn.setAttribute("aria-expanded", false);
+                              }
+                            });
+                          </script>
+                        </div>
+                        <div class="border-b border-gray-100 pb-2">
+                          <button
+                            class="flex items-center justify-between w-full py-2 text-left"
+                          >
+                            <span class="font-medium text-gray-900"
+                              >Категорія</span
+                            ><img
+                              src="../img/icons/icon-chevron-down-b.svg"
+                              alt="Chevron Down"
+                              width="24"
+                              height="24"
+                              class="lucide lucide-chevron-down w-4 h-4 transition-transform rotate-180"
+                            />
+                          </button>
+                          <div class="mt-3 space-y-2 max-h-48 overflow-y-auto">
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="category-chemodany"
+                              ></button
+                              ><label
+                                for="category-chemodany"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Валізи</span
+                                ><span class="text-muted-foreground"
+                                  >(45)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="category-dorozhnie-sumky"
+                              ></button
+                              ><label
+                                for="category-dorozhnie-sumky"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Дорожні сумки</span
+                                ><span class="text-muted-foreground"
+                                  >(23)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="category-ryukzaky-dorozhnie"
+                              ></button
+                              ><label
+                                for="category-ryukzaky-dorozhnie"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Дорожні рюкзаки</span
+                                ><span class="text-muted-foreground"
+                                  >(18)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="category-kosmetichky"
+                              ></button
+                              ><label
+                                for="category-kosmetichky"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Косметички</span
+                                ><span class="text-muted-foreground"
+                                  >(12)</span
+                                ></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="border-b border-gray-100 pb-2">
+                          <button
+                            class="flex items-center justify-between w-full py-2 text-left"
+                          >
+                            <span class="font-medium text-gray-900">Бренд</span
+                            ><img
+                              src="../img/icons/icon-chevron-down-b.svg"
+                              alt="Chevron Down"
+                              width="24"
+                              height="24"
+                              class="lucide lucide-chevron-down w-4 h-4 transition-transform rotate-180"
+                            />
+                          </button>
+                          <div class="mt-3 space-y-2 max-h-48 overflow-y-auto">
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="brand-samsonite"
+                              ></button
+                              ><label
+                                for="brand-samsonite"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Samsonite</span
+                                ><span class="text-muted-foreground"
+                                  >(15)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="brand-delsey"
+                              ></button
+                              ><label
+                                for="brand-delsey"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Delsey</span
+                                ><span class="text-muted-foreground"
+                                  >(12)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="brand-vip"
+                              ></button
+                              ><label
+                                for="brand-vip"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>VIP</span
+                                ><span class="text-muted-foreground"
+                                  >(10)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="brand-wings"
+                              ></button
+                              ><label
+                                for="brand-wings"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Wings</span
+                                ><span class="text-muted-foreground"
+                                  >(8)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="brand-madison"
+                              ></button
+                              ><label
+                                for="brand-madison"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Madison</span
+                                ><span class="text-muted-foreground"
+                                  >(6)</span
+                                ></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="border-b border-gray-100 pb-2">
+                          <button
+                            class="flex items-center justify-between w-full py-2 text-left"
+                          >
+                            <span class="font-medium text-gray-900">Колір</span
+                            ><img
+                              src="../img/icons/icon-chevron-down-b.svg"
+                              alt="Chevron Down"
+                              width="24"
+                              height="24"
+                              class="lucide lucide-chevron-down w-4 h-4 transition-transform rotate-180"
+                            />
+                          </button>
+                          <div class="mt-3 space-y-2 max-h-48 overflow-y-auto">
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="color-black"
+                              ></button
+                              ><label
+                                for="color-black"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Чорний</span
+                                ><span class="text-muted-foreground"
+                                  >(25)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="color-blue"
+                              ></button
+                              ><label
+                                for="color-blue"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Синій</span
+                                ><span class="text-muted-foreground"
+                                  >(18)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="color-red"
+                              ></button
+                              ><label
+                                for="color-red"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Червоний</span
+                                ><span class="text-muted-foreground"
+                                  >(12)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="color-gray"
+                              ></button
+                              ><label
+                                for="color-gray"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Сірий</span
+                                ><span class="text-muted-foreground"
+                                  >(15)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="color-green"
+                              ></button
+                              ><label
+                                for="color-green"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Зелений</span
+                                ><span class="text-muted-foreground"
+                                  >(8)</span
+                                ></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="border-b border-gray-100 pb-2">
+                          <button
+                            class="flex items-center justify-between w-full py-2 text-left"
+                          >
+                            <span class="font-medium text-gray-900"
+                              >Матеріал</span
+                            ><img
+                              src="../img/icons/icon-chevron-down-b.svg"
+                              alt="Chevron Down"
+                              width="24"
+                              height="24"
+                              class="lucide lucide-chevron-down w-4 h-4 transition-transform"
+                            />
+                          </button>
+                          <div class="mt-3 space-y-2 max-h-48 overflow-y-auto">
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="material-polyester"
+                              ></button
+                              ><label
+                                for="material-polyester"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Поліестер</span
+                                ><span class="text-muted-foreground"
+                                  >(35)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="material-nylon"
+                              ></button
+                              ><label
+                                for="material-nylon"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Нейлон</span
+                                ><span class="text-muted-foreground"
+                                  >(25)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="material-leather"
+                              ></button
+                              ><label
+                                for="material-leather"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Шкіра</span
+                                ><span class="text-muted-foreground"
+                                  >(15)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="material-pvc"
+                              ></button
+                              ><label
+                                for="material-pvc"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>ПВХ</span
+                                ><span class="text-muted-foreground"
+                                  >(10)</span
+                                ></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="border-b border-gray-100 pb-2">
+                          <button
+                            class="flex items-center justify-between w-full py-2 text-left"
+                          >
+                            <span class="font-medium text-gray-900">Розмір</span
+                            ><img
+                              src="../img/icons/icon-chevron-down-b.svg"
+                              alt="Chevron Down"
+                              width="24"
+                              height="24"
+                              class="lucide lucide-chevron-down w-4 h-4 transition-transform"
+                            />
+                          </button>
+                          <div class="mt-3 space-y-2 max-h-48 overflow-y-auto">
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="size-s"
+                              ></button
+                              ><label
+                                for="size-s"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>S</span
+                                ><span class="text-muted-foreground"
+                                  >(12)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="size-m"
+                              ></button
+                              ><label
+                                for="size-m"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>M</span
+                                ><span class="text-muted-foreground"
+                                  >(25)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="size-l"
+                              ></button
+                              ><label
+                                for="size-l"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>L</span
+                                ><span class="text-muted-foreground"
+                                  >(18)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="size-xl"
+                              ></button
+                              ><label
+                                for="size-xl"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>XL</span
+                                ><span class="text-muted-foreground"
+                                  >(10)</span
+                                ></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="border-b border-gray-100 pb-2">
+                          <button
+                            class="flex items-center justify-between w-full py-2 text-left"
+                          >
+                            <span class="font-medium text-gray-900"
+                              >Країна виробник</span
+                            ><img
+                              src="../img/icons/icon-chevron-down-b.svg"
+                              alt="Chevron Down"
+                              width="24"
+                              height="24"
+                              class="lucide lucide-chevron-down w-4 h-4 transition-transform"
+                            />
+                          </button>
+                          <div class="mt-3 space-y-2 max-h-48 overflow-y-auto">
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="country-china"
+                              ></button
+                              ><label
+                                for="country-china"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Китай</span
+                                ><span class="text-muted-foreground"
+                                  >(28)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="country-vietnam"
+                              ></button
+                              ><label
+                                for="country-vietnam"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>В'єтнам</span
+                                ><span class="text-muted-foreground"
+                                  >(15)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="country-turkey"
+                              ></button
+                              ><label
+                                for="country-turkey"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Туреччина</span
+                                ><span class="text-muted-foreground"
+                                  >(12)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="country-ukraine"
+                              ></button
+                              ><label
+                                for="country-ukraine"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Україна</span
+                                ><span class="text-muted-foreground"
+                                  >(8)</span
+                                ></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="border-b border-gray-100 pb-2">
+                          <button
+                            class="flex items-center justify-between w-full py-2 text-left"
+                          >
+                            <span class="font-medium text-gray-900"
+                              >Вид застібки</span
+                            ><img
+                              src="../img/icons/icon-chevron-down-b.svg"
+                              alt="Chevron Down"
+                              width="24"
+                              height="24"
+                              class="lucide lucide-chevron-down w-4 h-4 transition-transform"
+                            />
+                          </button>
+                          <div class="mt-3 space-y-2 max-h-48 overflow-y-auto">
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="lock-zipper"
+                              ></button
+                              ><label
+                                for="lock-zipper"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Блискавка</span
+                                ><span class="text-muted-foreground"
+                                  >(42)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="lock-velcro"
+                              ></button
+                              ><label
+                                for="lock-velcro"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Липучка</span
+                                ><span class="text-muted-foreground"
+                                  >(15)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="lock-buttons"
+                              ></button
+                              ><label
+                                for="lock-buttons"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Кнопки</span
+                                ><span class="text-muted-foreground"
+                                  >(8)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="lock-magnetic"
+                              ></button
+                              ><label
+                                for="lock-magnetic"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Магнітна</span
+                                ><span class="text-muted-foreground"
+                                  >(5)</span
+                                ></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="border-b border-gray-100 pb-2">
+                          <button
+                            class="flex items-center justify-between w-full py-2 text-left"
+                          >
+                            <span class="font-medium text-gray-900"
+                              >Наявність</span
+                            ><img
+                              src="../img/icons/icon-chevron-down-b.svg"
+                              alt="Chevron Down"
+                              width="24"
+                              height="24"
+                              class="lucide lucide-chevron-down w-4 h-4 transition-transform rotate-180"
+                            />
+                          </button>
+                          <div class="mt-3 space-y-2 max-h-48 overflow-y-auto">
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="availability-in-stock"
+                              ></button
+                              ><label
+                                for="availability-in-stock"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>В наявності</span
+                                ><span class="text-muted-foreground"
+                                  >(65)</span
+                                ></label
+                              >
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <button
+                                type="button"
+                                role="checkbox"
+                                aria-checked="false"
+                                data-state="unchecked"
+                                value="on"
+                                class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                id="availability-on-order"
+                              ></button
+                              ><label
+                                for="availability-on-order"
+                                class="text-sm flex-1 cursor-pointer flex items-center justify-between"
+                                ><span>Під замовлення</span
+                                ><span class="text-muted-foreground"
+                                  >(11)</span
+                                ></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="fixed inset-0 z-50 bg-background transition-transform duration-300 translate-x-full"
+                >
+                  <div class="flex-1">
+                    <div
+                      class="gap-x-6 gap-y-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                      style="display: grid"
+                    >
+                      <div class="group relative h-full flex flex-col px-4">
+                        <div
+                          class="relative aspect-square mb-3 overflow-hidden"
+                        >
+                          <a href="./product.html"
+                            ><img
+                              src="../img/product.webp"
+                              alt="Чемодан SAMSONITE S'Cure Spinner 55cm"
+                              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                          /></a>
+                          <div
+                            class="absolute top-3 left-3 flex flex-col gap-1 z-10"
+                          >
+                            <span
+                              class="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium"
+                              >ХІТ</span
+                            ><span
+                              class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-medium"
+                              >-9%</span
+                            >
+                          </div>
+                          <div
+                            class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                          >
+                            <button
+                              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                              aria-pressed="false"
+                            >
+                              <span
+                                class="inline-block align-middle w-4 h-4"
+                                aria-hidden="true"
+                                ><img
+                                  src="../img/icons/icon-heart.svg"
+                                  alt="Heart"
+                              /></span></button
+                            ><button
+                              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                              aria-pressed="false"
+                            >
+                              <span
+                                class="inline-block align-middle w-4 h-4"
+                                aria-hidden="true"
+                                ><img
+                                  src="../img/icons/icon-compare.svg"
+                                  alt="Compare"
+                              /></span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="space-y-2 flex-1 flex flex-col">
+                          <div
+                            class="text-xs text-gray-500 font-medium tracking-wide uppercase"
+                          >
+                            SAMSONITE
+                          </div>
+                          <a class="block" href="./product.html">
+                            <h3
+                              class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium"
+                            >
+                              Чемодан SAMSONITE S'Cure Spinner 55cm
+                            </h3>
+                          </a>
+                          <div class="pt-1 mt-auto">
+                            <a class="inline-block" href="./login.html"
+                              ><span
+                                class="text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                                >Увійти для перегляду цін →</span
+                              ></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group relative h-full flex flex-col px-4">
+                        <div
+                          class="relative aspect-square mb-3 overflow-hidden"
+                        >
+                          <a href="./product.html"
+                            ><img
+                              src="../img/product.webp"
+                              alt="Дорожня сумка DELSEY Montrouge 55cm"
+                              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                          /></a>
+                          <div
+                            class="absolute top-3 left-3 flex flex-col gap-1 z-10"
+                          >
+                            <span
+                              class="bg-green-500 text-white text-xs px-2 py-1 rounded font-medium"
+                              >НОВИНКА</span
+                            >
+                          </div>
+                          <div
+                            class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                          >
+                            <button
+                              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                              aria-pressed="false"
+                            >
+                              <span
+                                class="inline-block align-middle w-4 h-4"
+                                aria-hidden="true"
+                                ><img
+                                  src="../img/icons/icon-heart.svg"
+                                  alt="Heart"
+                              /></span></button
+                            ><button
+                              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                              aria-pressed="false"
+                            >
+                              <span
+                                class="inline-block align-middle w-4 h-4"
+                                aria-hidden="true"
+                                ><img
+                                  src="../img/icons/icon-compare.svg"
+                                  alt="Compare"
+                              /></span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="space-y-2 flex-1 flex flex-col">
+                          <div
+                            class="text-xs text-gray-500 font-medium tracking-wide uppercase"
+                          >
+                            DELSEY
+                          </div>
+                          <a class="block" href="./product.html">
+                            <h3
+                              class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium"
+                            >
+                              Дорожня сумка DELSEY Montrouge 55cm
+                            </h3>
+                          </a>
+                          <div class="pt-1 mt-auto">
+                            <a class="inline-block" href="./login.html"
+                              ><span
+                                class="text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                                >Увійти для перегляду цін →</span
+                              ></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group relative h-full flex flex-col px-4">
+                        <div
+                          class="relative aspect-square mb-3 overflow-hidden"
+                        >
+                          <a href="./product.html"
+                            ><img
+                              src="../img/product.webp"
+                              alt="Чемодан VIP Collection Manhattan 65cm"
+                              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                          /></a>
+                          <div
+                            class="absolute top-3 left-3 flex flex-col gap-1 z-10"
+                          >
+                            <span
+                              class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-medium"
+                              >-15%</span
+                            >
+                          </div>
+                          <div
+                            class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                          >
+                            <button
+                              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                              aria-pressed="false"
+                            >
+                              <span
+                                class="inline-block align-middle w-4 h-4"
+                                aria-hidden="true"
+                                ><img
+                                  src="../img/icons/icon-heart.svg"
+                                  alt="Heart"
+                              /></span></button
+                            ><button
+                              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                              aria-pressed="false"
+                            >
+                              <span
+                                class="inline-block align-middle w-4 h-4"
+                                aria-hidden="true"
+                                ><img
+                                  src="../img/icons/icon-compare.svg"
+                                  alt="Compare"
+                              /></span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="space-y-2 flex-1 flex flex-col">
+                          <div
+                            class="text-xs text-gray-500 font-medium tracking-wide uppercase"
+                          >
+                            VIP
+                          </div>
+                          <a class="block" href="./product.html">
+                            <h3
+                              class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium"
+                            >
+                              Чемодан VIP Collection Manhattan 65cm
+                            </h3>
+                          </a>
+                          <div class="pt-1 mt-auto">
+                            <a class="inline-block" href="./login.html"
+                              ><span
+                                class="text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                                >Увійти для перегляду цін →</span
+                              ></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group relative h-full flex flex-col px-4">
+                        <div
+                          class="relative aspect-square mb-3 overflow-hidden"
+                        >
+                          <a href="./product.html"
+                            ><img
+                              src="../img/product.webp"
+                              alt="Рюкзак дорожній WINGS TB1007 40L"
+                              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                          /></a>
+                          <div
+                            class="absolute top-3 left-3 flex flex-col gap-1 z-10"
+                          ></div>
+                          <div
+                            class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                          >
+                            <button
+                              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                              aria-pressed="false"
+                            >
+                              <span
+                                class="inline-block align-middle w-4 h-4"
+                                aria-hidden="true"
+                                ><img
+                                  src="../img/icons/icon-heart.svg"
+                                  alt="Heart"
+                              /></span></button
+                            ><button
+                              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground rounded-md w-9 h-9 p-0 bg-white/90 backdrop-blur-sm hover:bg-white"
+                              aria-pressed="false"
+                            >
+                              <span
+                                class="inline-block align-middle w-4 h-4"
+                                aria-hidden="true"
+                                ><img
+                                  src="../img/icons/icon-compare.svg"
+                                  alt="Compare"
+                              /></span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="space-y-2 flex-1 flex flex-col">
+                          <div
+                            class="text-xs text-gray-500 font-medium tracking-wide uppercase"
+                          >
+                            WINGS
+                          </div>
+                          <a class="block" href="./product.html">
+                            <h3
+                              class="text-sm leading-tight hover:text-primary transition-colors line-clamp-2 font-medium"
+                            >
+                              Рюкзак дорожній WINGS TB1007 40L
+                            </h3>
+                          </a>
+                          <div class="pt-1 mt-auto">
+                            <a class="inline-block" href="./login.html"
+                              ><span
+                                class="text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                                >Увійти для перегляду цін →</span
+                              ></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-16 text-center">
+                      <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-11 rounded-md px-8 border-gray-200 hover:bg-gray-50"
+                      >
+                        Завантажити ще
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="bg-gray-900 text-gray-300">
+          <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-4">SKLADONLINE</h3>
+                <p class="text-sm">
+                  Інтернет-магазин шкіряних виробів. Великий вибір сумок,
+                  кошельків, ремінів та аксесуарів.
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white mb-4">Контакти</h4>
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-center space-x-2">
+                    <img
+                      src="../img/icons/icon-phone.svg"
+                      alt="Phone"
+                      width="24"
+                      height="24"
+                      class="lucide lucide-phone w-4 h-4"
+                    /><span>+380 (44) 123-45-67</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <img
+                      src="../img/icons/icon-phone.svg"
+                      alt="Phone"
+                      width="24"
+                      height="24"
+                      class="lucide lucide-phone w-4 h-4"
+                    /><span>+380 (67) 123-45-67</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <img
+                      src="../img/icons/icon-mail.svg"
+                      alt="Mail"
+                      width="24"
+                      height="24"
+                      class="lucide lucide-mail w-4 h-4"
+                    /><span>info@skladonline.com.ua</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white mb-4">Час роботи</h4>
+                <div class="space-y-3 text-sm">
+                  <div class="flex items-center space-x-2">
+                    <img
+                      src="../img/icons/icon-clock.svg"
+                      alt="Clock"
+                      width="24"
+                      height="24"
+                      class="lucide lucide-clock w-4 h-4"
+                    /><span>Пн-Пт: 9:00-18:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8">
+              <div class="text-sm text-center">
+                © 2025 SKLADONLINE. Всі права захищені.
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
