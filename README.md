@@ -1,42 +1,140 @@
-# Project Description: Sklad Online (Frontend)
+# Sklad Online - E-commerce Platform
 
-This repository contains the frontend part of the Sklad Online project, an e-commerce web application for product catalog browsing, shopping cart management, product comparison, favorites, and user authentication.
+This repository contains the frontend implementation of Sklad Online, a comprehensive e-commerce platform designed for modern web browsers.
 
-## Overview
-- **Frontend Stack:** HTML, CSS, JavaScript
-- **Structure:**
-  - `html/` — All main pages (catalog, product, cart, login, etc.)
-  - `img/` — Images and SVG icons
-  - `js/` — JavaScript modules for UI logic (cart, catalog, filters, etc.)
-  - `style/` — CSS styles (main, components, utilities, etc.)
+## Technical Stack
+- **Frontend:**
+  - HTML5
+  - CSS3 (with modular structure)
+  - Vanilla JavaScript (ES6+)
+  - Responsive Design (Mobile-first approach)
 
-## Key Features
-- Product catalog with filtering and sorting
-- Product detail pages
-- Shopping cart and buying flow
-- User login and authentication pages
-- Favorites and comparison functionality
-- Responsive design for mobile and desktop
+## Project Structure
+```
+├── html/           # Static HTML templates
+├── img/            # Images and SVG icons
+│   └── icons/      # SVG icons for UI elements
+├── js/             # JavaScript modules
+└── style/          # CSS stylesheets
+```
 
-## Backend Integration
-- The frontend expects RESTful API endpoints for:
-  - Product data (list, details, filters)
-  - Cart operations (add, remove, update)
-  - User authentication (login, registration)
-  - Favorites and comparison lists
-- API endpoints should return JSON responses.
-- Authentication can use JWT or session cookies.
+## Required Backend API Endpoints
+
+### Products
+```
+GET /api/products           # List products with pagination
+GET /api/products/{id}      # Get product details
+GET /api/products/filter    # Filter products
+GET /api/products/search    # Search products
+```
+
+### Cart
+```
+GET    /api/cart                # Get cart contents
+POST   /api/cart/add           # Add item to cart
+PUT    /api/cart/{id}          # Update cart item
+DELETE /api/cart/{id}          # Remove from cart
+POST   /api/cart/checkout      # Process checkout
+```
+
+### User Authentication
+```
+POST   /api/auth/login         # User login
+POST   /api/auth/register      # User registration
+POST   /api/auth/logout        # User logout
+GET    /api/auth/profile       # Get user profile
+```
+
+### User Features
+```
+GET    /api/favorites          # Get user favorites
+POST   /api/favorites/add      # Add to favorites
+DELETE /api/favorites/{id}     # Remove from favorites
+GET    /api/compare           # Get comparison list
+POST   /api/compare/add       # Add to comparison
+DELETE /api/compare/{id}      # Remove from comparison
+```
+
+## API Requirements
+
+### Authentication
+- Implementation: JWT (preferred) or Session Cookies
+- Token format: Bearer authentication
+- Refresh token mechanism required
+
+### Response Format
+```json
+{
+    "status": "success|error",
+    "data": {
+        // Response data
+    },
+    "error": {
+        "code": "ERROR_CODE",
+        "message": "Error description"
+    }
+}
+```
+
+### Pagination Format
+```json
+{
+    "data": [...],
+    "pagination": {
+        "currentPage": 1,
+        "perPage": 20,
+        "totalItems": 100,
+        "totalPages": 5
+    }
+}
+```
+
+## Backend Implementation Notes
+
+### Required Features
+1. **Product Management**
+   - Categories and subcategories
+   - Product variants (size, color, etc.)
+   - Stock management
+   - Price calculation with discounts
+
+2. **User Management**
+   - User roles (customer, admin)
+   - Address management
+   - Order history
+   - Wishlist/Favorites
+
+3. **Order Processing**
+   - Cart management
+   - Checkout process
+   - Order status tracking
+   - Payment integration
+
+4. **Security Requirements**
+   - Input validation
+   - XSS protection
+   - CSRF protection
+   - Rate limiting
+   - Data sanitization
+
+### Database Considerations
+- Product data structure must support variants
+- User sessions and cart persistence
+- Order history and status tracking
+- Efficient query optimization for filters
+
+### Performance Requirements
+- API response time < 200ms
+- Caching implementation required
+- Image optimization support
+- Database indexing strategy
 
 ## Getting Started
-1. Open `html/index.html` in a browser to preview the UI.
-2. Connect frontend JS modules to backend API endpoints as needed.
-3. Static assets are located in `img/` and `style/` folders.
+1. Clone the repository
+2. Review HTML templates in `/html`
+3. Check JavaScript modules in `/js`
+4. Implement required API endpoints
+5. Connect frontend to your API implementation
 
-## Notes for Backend Developer
-- No backend code is present in this repository.
-- All dynamic data and user actions are expected to be handled via API calls.
-- Please provide API documentation or endpoints for integration.
-
----
-
-For any questions or integration details, contact the frontend team.
+## Contact
+For technical questions and API implementation details, contact the development team.
